@@ -1,0 +1,19 @@
+# Output files
+mode_report_*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials (never commit these!)
+.env
+credentials.txt

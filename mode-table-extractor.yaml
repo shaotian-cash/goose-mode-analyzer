@@ -1,0 +1,41 @@
+name: mode-table-extractor
+description: Extract SQL queries and table references from Mode reports
+version: 1.0.0
+
+parameters:
+  - name: mode_report_url
+    description: The Mode report URL to analyze
+    type: string
+    required: true
+
+instructions: |
+  You are tasked with analyzing a Mode report and extracting all SQL queries and table references.
+  
+  Given the Mode report URL: {{ mode_report_url }}
+  
+  Use the Mode Report Analyzer tool to fetch and analyze the report:
+  
+  1. Run the analyzer script:
+     ```bash
+     uv run ~/recipes/mode_analyzer_standalone.py "{{ mode_report_url }}"
+     ```
+  
+  2. The script will:
+     - Connect to Mode API using MODE_TOKEN and MODE_SECRET environment variables
+     - Fetch the report and all its queries
+     - Extract all table references from each query
+     - Generate a comprehensive analysis report
+  
+  3. Review the output and present it to the user
+  
+  4. If the script fails due to missing credentials, guide the user to:
+     - Set MODE_TOKEN environment variable
+     - Set MODE_SECRET environment variable
+     - Re-run the analysis
+  
+  The output will include:
+  - Report metadata (name, workspace, ID)
+  - All SQL queries with syntax highlighting
+  - Tables referenced in each query
+  - Summary of total queries and unique tables
+  - Complete list of all tables used across the report
