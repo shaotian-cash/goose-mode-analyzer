@@ -1,6 +1,34 @@
-# Goose Recipes & Tools
+# Mode Report Analyzer for Goose 🦆
 
-Custom recipes and tools for goose automation.
+Extract SQL queries and table references from Mode reports automatically.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Overview
+
+A tool for [Goose](https://github.com/block/goose) that analyzes Mode Analytics reports and extracts:
+- All SQL queries
+- Table references and dependencies
+- Data lineage information
+
+Perfect for documentation, auditing, and understanding complex Mode reports.
+
+## Quick Start
+
+```bash
+# Install
+git clone https://github.com/shaotian-cash/goose-mode-analyzer.git ~/recipes
+
+# Set credentials
+export MODE_TOKEN=your_token MODE_SECRET=your_secret
+
+# Analyze a report
+~/recipes/analyze-mode-report.sh "https://app.mode.com/workspace/reports/REPORT_ID"
+```
+
+📖 **[Full Installation Guide](INSTALL.md)** | 🚀 **[Usage Examples](USAGE.md)**
+
+---
 
 ## Mode Report Analyzer
 
